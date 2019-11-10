@@ -1,22 +1,480 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Staatliches&display=swap");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+body {
+  font-size: 18px;
+  font-family: "Open Sans", sans-seri;
+  height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
+body .loading {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body .loading:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #5c4ccf;
+  border-color: #5c4ccf transparent #5c4ccf transparent;
+  animation: loadinganimation 1.2s linear infinite;
+}
+body .loading.single:after {
+  border: 5px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: loadinganimation 1.2s linear infinite;
+}
+body .links {
   display: flex;
-  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+}
+body .links a {
+  margin-right: auto;
+}
+body .links a.close {
+  margin-left: auto;
+  margin-right: 0;
+}
+body .form {
+  width: 400px;
+  margin: 0 auto;
+}
+body .form p {
+  font-size: 12px;
+  padding: 10px 0;
+  text-align: right;
+  padding-right: 10px;
+  color: #fff;
+}
+body .form p.success {
+  color: #fff;
+  background: #1CB7BE;
+  margin-bottom: 2px;
+  text-align: center;
+  font-size: 15px;
+  text-align: left;
+  padding: 8px 8px;
+}
+body .form p.error {
+  color: #fff;
+  background: #F46B66;
+  margin-bottom: 2px;
+  text-align: center;
+  font-size: 15px;
+  text-align: left;
+  padding: 8px 8px;
+}
+body .form p.error span {
+  font-weight: bold;
+}
+body .form p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+body .addform {
+  background: #fff;
+}
+body .addform h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
+  color: #c1c1c1;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+body .addform form {
+  flex: 100%;
+}
+body .addform form input, body .addform form select {
+  width: 100%;
+  border: 0px;
+  padding: 10px;
+  height: 50px;
+  line-height: 40px;
+  outline: 0px;
+  border-bottom: 1px solid #ccc;
+}
+body .addform form select {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  scroll-behavior: smooth;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+body .addform form .fileall label {
+  cursor: pointer;
+  color: #00b1ca;
+  font-weight: bold;
+}
+body .addform form .fileall input {
+  font-size: 0.8888888889rem;
+  height: 67px;
+}
+body .addform form button {
+  display: block;
+  color: #fff;
+  background: #5c4ccf;
+  font-size: 0.8888888889rem;
+  border: 0px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  font-family: "Open Sans", sans-seri;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+body .addform p {
+  font-size: 12px;
+  padding: 10px 0;
+  text-align: right;
+  padding-right: 10px;
+  color: #fff;
+}
+body .addform p.success {
+  color: #fff;
+  background: #1CB7BE;
+  margin-bottom: 2px;
+  text-align: center;
+  font-size: 15px;
+  text-align: left;
+  padding: 8px 8px;
+}
+body .addform p.error {
+  color: #fff;
+  background: #F46B66;
+  margin-bottom: 2px;
+  text-align: center;
+  font-size: 15px;
+  text-align: left;
+  padding: 8px 8px;
+}
+body .addform p.error span {
+  font-weight: bold;
+}
+body .addform p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+body .navbar {
+  height: 50px;
+  background: #fff;
+  margin-bottom: 60px;
+  display: flex;
+}
+body .navbar .left-btn {
+  width: 50%;
+  margin-right: auto;
+  display: flex;
+}
+body .navbar .left-btn button, body .navbar .left-btn a {
+  margin-right: auto;
+  display: block;
+  color: #5c4ccf;
+  background: #fff;
+  font-size: 0.8333333333rem;
+  border-radius: 6px;
+  border: 1px solid #5c4ccf;
+  padding: 5px;
+  max-height: 28px;
+  width: 140px;
+  text-align: center;
+  font-family: "Open Sans", sans-seri;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+body .navbar .right-btn {
+  width: 50%;
+  margin-left: auto;
+  display: flex;
+}
+body .navbar .right-btn a {
+  margin-left: auto;
+  display: block;
+  color: #fff;
+  background: #5c4ccf;
+  font-size: 0.8333333333rem;
+  border-radius: 6px;
+  padding: 5px;
+  width: 140px;
+  text-align: center;
+  font-family: "Open Sans", sans-seri;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0px;
+}
+body img.logo {
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+body .particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #6352dc;
+  background: -webkit-linear-gradient(left top, #48486b, #131327);
+  background: -o-linear-gradient(bottom right, #48486b, #131327);
+  background: -moz-linear-gradient(bottom right, #48486b, #131327);
+  background: linear-gradient(to bottom right, #48486b, #131327);
+}
+body footer {
+  background: #fff;
+  padding: 10px 0px;
+}
+body footer p {
+  text-align: center;
+  margin: 0px;
+  font-weight: bold;
+  font-size: 0.7777777778rem;
+}
+body footer p i {
+  color: red;
+  font-size: 0.6666666667rem;
+}
+body footer p small {
+  font-weight: bold;
+  display: block;
+}
+
+section.singles {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
+}
+section.singles .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+section.singles .single {
+  margin: 0 auto;
+  width: 700px;
+  position: relative;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+section.singles .single a {
+  display: block;
+  text-align: right;
+  color: #ccc;
+}
+section.singles .single a i {
+  padding: 10px;
+}
+section.singles .single .infos {
+  background: #f1f1f1;
+  max-width: 100%;
+  padding-top: 20px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+section.singles .single .infos .icon {
+  border: 1px solid #ccc;
+  overflow: hidden;
+  max-width: 170px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+section.singles .single .infos .icon img {
+  width: 100%;
+  display: block;
+}
+section.singles .single .infos .info {
+  border-top: 1px solid #ccc;
+}
+section.singles .single .infos .info p {
+  margin: 0px;
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+section.singles .single .infos .info p span {
+  display: block;
+  font-weight: bold;
+  width: 129px;
+}
+section.singles .single .infos .info p.striped {
+  background: rgba(0, 0, 0, 0.1);
+}
+section.show {
+  height: 100vh;
+}
+section.show .cards .boxs {
+  display: flex;
+  flex-wrap: wrap;
+  background: #f1f1f1;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  overflow: auto;
+  height: 740px;
+}
+section.show .cards .boxs::-webkit-scrollbar {
+  width: 8px;
+}
+section.show .cards .boxs::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 0px;
+}
+section.show .cards .boxs::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border-radius: 0px;
+}
+@media screen and (max-width: 1000px) {
+  section.show .cards .boxs {
+    flex-flow: column;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+section.show .cards form {
+  flex: 100%;
+  border-bottom: 1px solid #ccc;
+}
+section.show .cards form input {
+  width: 100%;
+  border: 0px;
+  padding: 10px;
+  height: 50px;
+  line-height: 40px;
+  outline: 0px;
+}
+section.show .cards .box {
+  flex-grow: 1;
+  width: 20%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1000px) {
+  section.show .cards .box:first-child {
+    border-top: 1px solid #ccc;
+  }
+}
+@media screen and (max-width: 1000px) {
+  section.show .cards .box {
+    margin-bottom: 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
+}
+section.show .cards .box .boxinside {
+  border: 1px solid #ccc;
+  background: #FFFFFF;
+  max-width: 170px;
+  margin: 0px auto;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+  transition: all 500ms ease-in-out;
+}
+@media screen and (max-width: 1000px) {
+  section.show .cards .box .boxinside {
+    align-items: center;
+    display: flex;
+    border-radius: 0px;
+    max-width: 100%;
+    width: 100%;
+    overflow: unset;
+    border: 0px;
+  }
+}
+section.show .cards .box .boxinside a {
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+@media screen and (max-width: 1000px) {
+  section.show .cards .box .boxinside a {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+section.show .cards .box .boxinside img {
+  width: 100%;
+  filter: grayscale(1);
+  transition: all 1s ease-in-out;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+@media screen and (max-width: 1000px) {
+  section.show .cards .box .boxinside img {
+    border-radius: 0px;
+    width: 30px;
+  }
+}
+section.show .cards .box .boxinside span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.8888888889rem;
+  padding: 5px 0px;
+  background: #fff;
+  font-weight: bold;
+}
+@media screen and (max-width: 1000px) {
+  section.show .cards .box .boxinside span {
+    padding: 0px;
+    padding-left: 10px;
+    background: transparent;
+  }
+}
+section.show .cards .box .boxinside:hover {
+  background: linear-gradient(to right, #ed7201, #fbe006, #212a65, #2558a5);
+  padding: 3px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+@media screen and (max-width: 1000px) {
+  section.show .cards .box .boxinside:hover {
+    background: #ccc;
+    border-radius: 0px;
+    padding: 0px;
+  }
+}
+section.show .cards .box .boxinside:hover img {
+  filter: grayscale(0);
+}
+span.empty {
+  color: #fff;
+  background: #e83e8c;
+  text-align: center;
+  font-size: 15px;
+  padding: 8px 0;
 }
 
-.App-link {
-  color: #09d3ac;
+@keyframes loadinganimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
+/*# sourceMappingURL=App.css.map */

@@ -1,68 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# KOF-98-API
+Laravel 5.8 & ReactJS based - [See it live](http://kof98.aubbusta.co)
 
-## Available Scripts
+## Files are located at /dist => [Index,+css+js files](https://github.com/ayoub-bousetta/ShopiYo/tree/master/dist)
 
-In the project directory, you can run:
+-> Please Consider to use this data wisely in a comercial project.
 
-### `npm start`
+### Getting Started
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+All Files are found on this repo separated as branches, so you can get whatever you like from the project. :high_brightness:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+##### Static_Template -> (Aka the design)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Contain only basics elements that i needed to get an idea on the final project, that's why i use the <section> to separate parts for the final SPA project, Created from scratch all elements are available [here](https://github.com/ayoub-bousetta/ShopiYo/tree/Static_Template), so clone it and enjoy.
 
-### `npm run build`
+ 
+##### \apiDriven -> (Aka Back-end)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Simple Api based on [laravel framewor 5.8](https://laravel.com)  and  [JWT-token](https://jwt-auth.readthedocs.io/en/develop/) lib  to get the token, ...also you can clone it and enjoy..
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+NB: I satrted the project using V6.2 but jwt is not yet supported...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Master -> (Aka Front-end)
 
-### `npm run eject`
+ReactJS with Hooks. A lot of Redux and Router V4 features are used in this project...
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Public API
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+-> Get list of all players :  http://kof98.aubbusta.co/api/players
 
-## Learn More
+-> Get list one player : http://kof98.aubbusta.co/api/players/one/+id
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-> Search for players like :  http://kof98.aubbusta.co/api/players/like/+name
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+###### Live version 
 
-### Making a Progressive Web App
+-> [Client side](http://kof98.aubbusta.co)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+-> [Server Side API](http://kof98.aubbusta.co/api/)
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+##### More links API
 
-### Deployment
+->Edit player :  http://kof98.aubbusta.co/api/players/edit/+id 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+->Add player :  http://kof98.aubbusta.co/api/players/add
 
-### `npm run build` fails to minify
+->Login :  http://kof98.aubbusta.co/api/auth/login
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+->Register :  http://kof98.aubbusta.co/api/auth/register
+
+You need to be auth to be able to Add and edit . 
+
+
+
+######  Feel free,Because it's free
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
