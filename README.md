@@ -1,18 +1,17 @@
 # KOF-98-API
 Laravel 5.8 & ReactJS based - [See it live](http://kof98.aubbusta.co)
 
-## Files are located at /dist => [Index,+css+js files](https://github.com/ayoub-bousetta/ShopiYo/tree/master/dist)
+## ScreenShot
+![s1](https://raw.githubusercontent.com/ayoub-bousetta/kof98-api/master/public/screenshot.png)
+
+
+
 
 -> Please Consider to use this data wisely in a comercial project.
 
 ### Getting Started
 
 All Files are found on this repo separated as branches, so you can get whatever you like from the project. :high_brightness:
-
-
-##### Static_Template -> (Aka the design)
-
-Contain only basics elements that i needed to get an idea on the final project, that's why i use the <section> to separate parts for the final SPA project, Created from scratch all elements are available [here](https://github.com/ayoub-bousetta/ShopiYo/tree/Static_Template), so clone it and enjoy.
 
  
 ##### \apiDriven -> (Aka Back-end)
@@ -28,13 +27,12 @@ ReactJS with Hooks. A lot of Redux and Router V4 features are used in this proje
 
 ##### Public API
 
-
 ```
--> Get list of all players :  http://kof98.aubbusta.co/api/players
+-> Get list of all players :  http://kof98api.aubbusta.co/api/players
 
--> Get list one player : http://kof98.aubbusta.co/api/players/one/+id
+-> Get list one player : http://kof98api.aubbusta.co/api/players/one/+id
 
--> Search for players like :  http://kof98.aubbusta.co/api/players/like/+name
+-> Search for players like :  http://kof98api.aubbusta.co/api/players/like/+name
 
 
 ```
@@ -45,18 +43,18 @@ ReactJS with Hooks. A lot of Redux and Router V4 features are used in this proje
 
 -> [Client side](http://kof98.aubbusta.co)
 
--> [Server Side API](http://kof98.aubbusta.co/api/)
+-> [Server Side API](http://kof98api.aubbusta.co/api/)
 
 
 ##### More links API
 
-->Edit player :  http://kof98.aubbusta.co/api/players/edit/+id 
+->Edit player :  http://kof98api.aubbusta.co/api/players/edit/+id 
 
-->Add player :  http://kof98.aubbusta.co/api/players/add
+->Add player :  http://kof98api.aubbusta.co/api/players/add
 
-->Login :  http://kof98.aubbusta.co/api/auth/login
+->Login :  http://kof98api.aubbusta.co/api/auth/login
 
-->Register :  http://kof98.aubbusta.co/api/auth/register
+->Register :  http://kof98api.aubbusta.co/api/auth/register
 
 You need to be auth to be able to Add and edit . 
 
@@ -65,3 +63,7 @@ You need to be auth to be able to Add and edit .
 ######  Feel free,Because it's free
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+####### Author
+
+* Designed and Developed by : **Ayoub Bousetta** - *Website* - [AUBBUSTA](https://aubbusta.co)
